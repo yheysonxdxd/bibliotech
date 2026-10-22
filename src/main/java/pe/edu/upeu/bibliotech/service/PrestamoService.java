@@ -21,7 +21,7 @@ public class PrestamoService {
         }
 
         // NUEVA REGLA (Equipo 1): un estudiante suspendido no puede solicitar préstamos
-        if (repository.estaSuspendido(estudianteId)) {
+          if (!repository.estaSuspendido(estudianteId)) {   // ERROR CONTROLADO
             throw new IllegalStateException("Estudiante suspendido");
         }
 
